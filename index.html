@@ -134,12 +134,14 @@
                     Sie können Ihre Kleidung gerne an der Geschäftsstelle
                     abgeben.
                   </p>
-                  <a
-                    href="uebergabe.html"
+                  <button
+                    type="button"
                     class="btn btn-primary mt-auto align-self-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#uebergabeModal"
                   >
                     Zum Formular
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -156,12 +158,14 @@
                     Wir können auch Ihre Kleidung mit einem unserer
                     Sammelfahrzeuge abholen, wenn Sie möchten.
                   </p>
-                  <a
-                    href="abholung.html"
+                  <button
+                    type="button"
                     class="btn btn-primary mt-auto align-self-start"
+                    data-bs-toggle="modal"
+                    data-bs-target="#abholungModal"
                   >
                     Zum Formular
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -184,6 +188,274 @@
         </section>
       </div>
     </main>
+
+    <!-- ===== Modal: Übergabe an der Geschäftsstelle ===== -->
+    <div
+      class="modal fade"
+      id="uebergabeModal"
+      tabindex="-1"
+      aria-labelledby="uebergabeModalTitel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h4" id="uebergabeModalTitel">
+              Übergabe an der Geschäftsstelle
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Schließen"
+            ></button>
+          </div>
+          <form class="needs-validation" novalidate>
+            <div class="modal-body">
+              <p class="mb-4">
+                Bitte füllen Sie das Formular aus und bringen Sie Ihre Kleidung
+                anschließend in die Spenderstraße 123, 14550 Berlin.
+              </p>
+
+              <div class="mb-3">
+                <label for="uebergabe-kleidung" class="form-label"
+                  >Art der Kleidung</label
+                >
+                <select
+                  id="uebergabe-kleidung"
+                  name="kleidung"
+                  class="form-select"
+                  required
+                >
+                  <option value="" selected disabled>Bitte wählen …</option>
+                  <option>Jacken &amp; Mäntel</option>
+                  <option>Pullover &amp; Oberteile</option>
+                  <option>Hosen</option>
+                  <option>Schuhe</option>
+                  <option>Kinderkleidung</option>
+                  <option>Decken &amp; Schlafsäcke</option>
+                </select>
+                <div class="invalid-feedback">
+                  Bitte wählen Sie die Art der Kleidung.
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="uebergabe-region" class="form-label"
+                  >Krisenregion</label
+                >
+                <select
+                  id="uebergabe-region"
+                  name="region"
+                  class="form-select"
+                  required
+                >
+                  <option value="" selected disabled>Bitte wählen …</option>
+                  <option>Ukraine</option>
+                  <option>Sudan</option>
+                  <option>Syrien</option>
+                </select>
+                <div class="invalid-feedback">
+                  Bitte wählen Sie eine Krisenregion.
+                </div>
+              </div>
+
+              <div class="alert alert-success d-none erfolg" role="alert">
+                Vielen Dank! Ihre Spende wurde registriert.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Schließen
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Spende registrieren
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Modal: Abholung ===== -->
+    <div
+      class="modal fade"
+      id="abholungModal"
+      tabindex="-1"
+      aria-labelledby="abholungModalTitel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h4" id="abholungModalTitel">Abholung</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Schließen"
+            ></button>
+          </div>
+          <form class="needs-validation" novalidate>
+            <div class="modal-body">
+              <p class="mb-4">
+                Geben Sie Ihre Adresse und einen Wunschtermin an, dann holt
+                eines unserer Sammelfahrzeuge Ihre Kleidung ab.
+              </p>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="abholung-kleidung" class="form-label"
+                    >Art der Kleidung</label
+                  >
+                  <select
+                    id="abholung-kleidung"
+                    name="kleidung"
+                    class="form-select"
+                    required
+                  >
+                    <option value="" selected disabled>Bitte wählen …</option>
+                    <option>Jacken &amp; Mäntel</option>
+                    <option>Pullover &amp; Oberteile</option>
+                    <option>Hosen</option>
+                    <option>Schuhe</option>
+                    <option>Kinderkleidung</option>
+                    <option>Decken &amp; Schlafsäcke</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Bitte wählen Sie die Art der Kleidung.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="abholung-region" class="form-label"
+                    >Krisenregion</label
+                  >
+                  <select
+                    id="abholung-region"
+                    name="region"
+                    class="form-select"
+                    required
+                  >
+                    <option value="" selected disabled>Bitte wählen …</option>
+                    <option>Ukraine</option>
+                    <option>Sudan</option>
+                    <option>Syrien</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Bitte wählen Sie eine Krisenregion.
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="h5 mt-4">Abholadresse</h3>
+              <div class="row g-3 mb-3">
+                <div class="col-md-8">
+                  <label for="strasse" class="form-label"
+                    >Straße und Hausnummer</label
+                  >
+                  <input
+                    type="text"
+                    id="strasse"
+                    name="strasse"
+                    class="form-control"
+                    autocomplete="street-address"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Bitte geben Sie Ihre Straße an.
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="plz" class="form-label">PLZ</label>
+                  <input
+                    type="text"
+                    id="plz"
+                    name="plz"
+                    class="form-control"
+                    inputmode="numeric"
+                    pattern="[0-9]{5}"
+                    maxlength="5"
+                    autocomplete="postal-code"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Bitte eine gültige 5-stellige PLZ eingeben.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="ort" class="form-label">Ort</label>
+                  <input
+                    type="text"
+                    id="ort"
+                    name="ort"
+                    class="form-control"
+                    autocomplete="address-level2"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Bitte geben Sie Ihren Ort an.
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="h5 mt-4">Wunschtermin</h3>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="datum" class="form-label">Datum</label>
+                  <input
+                    type="date"
+                    id="datum"
+                    name="datum"
+                    class="form-control"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Bitte wählen Sie ein Datum ab morgen.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="uhrzeit" class="form-label">Uhrzeit</label>
+                  <input
+                    type="time"
+                    id="uhrzeit"
+                    name="uhrzeit"
+                    class="form-control"
+                    min="08:00"
+                    max="18:00"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Bitte eine Uhrzeit zwischen 8 und 18 Uhr wählen.
+                  </div>
+                </div>
+              </div>
+
+              <div class="alert alert-success d-none erfolg" role="alert">
+                Vielen Dank! Ihre Abholung wurde angefragt.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Schließen
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Abholung anfragen
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer py-4">
       <div class="container">
